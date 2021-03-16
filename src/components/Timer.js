@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
+import { finishGame } from '../helpers/game';
 
-const Timer = ({
-  initialSeconds,
-  isUser,
-  winner,
-  setWinner,
-  gameEnd,
-  setGameEnd,
-}) => {
-  const [seconds, setSeconds] = useState(Number(initialSeconds));
+const Timer = ({ isUser, winner, setWinner, gameEnd, setGameEnd }) => {
+  const [seconds, setSeconds] = useState(8);
 
   useEffect(() => {
     let myInterval = setInterval(() => {
@@ -16,9 +10,7 @@ const Timer = ({
         setSeconds(seconds - 1);
       }
       if (seconds === 0) {
-        if (!isUser) setWinner({ message: 'YOU WIN', type: 'user' });
-        else setWinner({ message: 'YOU LOSE', type: 'computer' });
-        setGameEnd(true);
+        finishGame(isUser, setWinner, setGameEnd);
         clearInterval(myInterval);
       }
     }, 1000);
@@ -28,7 +20,7 @@ const Timer = ({
   });
 
   useEffect(() => {
-    setSeconds(Number(initialSeconds));
+    setSeconds(8);
   }, [isUser]);
 
   return (
