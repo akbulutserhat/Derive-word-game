@@ -11,3 +11,7 @@ export const getNamesWithStartLastCharacter = (names, name) => {
   const lastCharacter = takeLastCharacter(name);
   return names.filter((name) => name[0] == lastCharacter);
 };
+
+export const getWrongNames = (names, lastCharacterNames) => {
+  return names.filter((name) => !lastCharacterNames.includes(name));
+};
