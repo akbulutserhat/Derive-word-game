@@ -28,4 +28,29 @@ export const getComputerAnswer = (
   return getRandomName(lastCharacterNames);
 };
 
-export const showAnswer = () => {};
+export const speechComputerAnswer = (answer) => {
+  let utterance = new SpeechSynthesisUtterance(answer);
+  speechSynthesis.speak(utterance);
+};
+
+export const getUserAnswer = (names) => {
+  const SpeechRecognition =
+    window.webkitSpeechRecognition || window.SpeechRecognition;
+
+  /*const SpeechGrammarList =
+    window.webkitSpeechGrammarList || window.SpeechGrammarList;*/
+
+  /*const grammar =
+    '#JSGF V1.0; grammar names; public <name> = ' + names.join(' | ') + ' ;';*/
+
+  let recognition = new SpeechRecognition();
+  /*const speechRecognitionList = new SpeechGrammarList();
+  speechRecognitionList.addFromString(grammar, 1);
+  recognition.grammars = speechRecognitionList;*/
+  recognition.lang = 'tr-TR';
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  return recognition;
+};
