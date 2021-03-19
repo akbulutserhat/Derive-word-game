@@ -1,5 +1,5 @@
 export const finishGame = (isUser, setWinner, setGameEnd) => {
-  if (!isUser) setWinner({ message: 'YOU WIN', type: 'user' });
-  else setWinner({ message: 'YOU LOSE', type: 'computer' });
+  if (!isUser) setWinner({ message: 'KAZANDIN', type: 'user' });
+  else setWinner({ message: 'KAYBETTİN', type: 'computer' });
   setGameEnd(true);
 };

@@ -15,12 +15,12 @@ export const checkAnswerCorrect = (lastCharacterNames, answer) => {
 export const getComputerAnswer = (
   names,
   lastCharacterNames,
-  difficultLevel = 3
+  difficultyLevel = 3
 ) => {
   // difficult level can be 1 = hard , 3 = medium , 5 = easy
 
   const randomNumber = Math.floor(Math.random() * 10) + 1;
-  if (randomNumber <= difficultLevel) {
+  if (randomNumber <= difficultyLevel) {
     // wrong answer for computer
     const wrongNames = getWrongNames(names, lastCharacterNames);
     return getRandomName(wrongNames);

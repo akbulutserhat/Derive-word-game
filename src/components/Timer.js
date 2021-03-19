@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { finishGame } from '../helpers/game';
 
-const Timer = ({ isUser, winner, setWinner, gameEnd, setGameEnd }) => {
+const Timer = ({ isUser, setWinner, setGameEnd }) => {
   const [seconds, setSeconds] = useState(8);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Timer = ({ isUser, winner, setWinner, gameEnd, setGameEnd }) => {
 
   return (
     <div className='timer'>
-      {!gameEnd ? <p>{seconds}</p> : <p>{winner?.message}</p>}
+      <p>{seconds}</p>
     </div>
   );
 };

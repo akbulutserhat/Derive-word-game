@@ -15,14 +15,13 @@ import {
 import { getRandomName, getNamesWithStartLastCharacter } from '../helpers/name';
 import EndScreen from './EndScreen';
 
-const Game = () => {
+const Game = ({ difficultyLevel }) => {
   const [name, setName] = useState(getRandomName(names));
   const [winner, setWinner] = useState();
   const [gameEnd, setGameEnd] = useState(false);
   // true = you, false = computer
   const [isUser, setIsUser] = useState(true);
   const [usedNames, setUsedNames] = useState([]);
-  const [difficultLevel, setDifficultLevel] = useState(3);
 
   const [computerWaitingTime, setComputerWaitingTime] = useState(1000);
 
@@ -49,7 +48,6 @@ const Game = () => {
       recognition.onresult = (event) => {
         let answer = event.results[0][0].transcript;
         answer = answer.toLowerCase();
-        console.log(answer);
         const lastCharacterNames = getNamesWithStartLastCharacter(names, name);
         playGame(lastCharacterNames, answer);
       };
@@ -60,7 +58,7 @@ const Game = () => {
         const answer = getComputerAnswer(
           names,
           lastCharacterNames,
-          difficultLevel
+          difficultyLevel
         );
         speechComputerAnswer(answer);
         setTimeout(playGame(lastCharacterNames, answer), computerWaitingTime);
@@ -70,14 +68,17 @@ const Game = () => {
 
   return (
     <div className='game'>
-      <Player isUser={isUser}></Player>
-      <Timer
-        isUser={isUser}
-        winner={winner}
-        setWinner={setWinner}
-        setGameEnd={setGameEnd}
-        gameEnd={gameEnd}></Timer>
-      <Name name={name}></Name>
+      {!gameEnd && (
+        <>
+          <Player isUser={isUser}></Player>
+          <Timer
+            isUser={isUser}
+            setWinner={setWinner}
+            setGameEnd={setGameEnd}
+            gameEnd={gameEnd}></Timer>
+          <Name name={name}></Name>{' '}
+        </>
+      )}
       {gameEnd && <EndScreen usedNames={usedNames}></EndScreen>}
     </div>
   );
