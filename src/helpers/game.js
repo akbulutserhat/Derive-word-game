@@ -1,5 +1,10 @@
-export const finishGame = (isUser, setWinner, setGameEnd) => {
-  if (!isUser) setWinner({ message: 'KAZANDIN', type: 'user' });
-  else setWinner({ message: 'KAYBETTİN', type: 'computer' });
+export const finishGame = (
+  isUser,
+  setWinner,
+  setGameEnd,
+  type = 'wrong-answer'
+) => {
+  if (!isUser) setWinner({ message: 'KAZANDIN', type: type });
+  else setWinner({ message: 'KAYBETTİN', type: type });
   setGameEnd(true);
 };

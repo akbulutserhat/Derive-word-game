@@ -1,5 +1,9 @@
 const Player = ({ isUser }) => {
-  return <div className='player'>{isUser ? <p>YOU</p> : <p>COMPUTER</p>}</div>;
+  return (
+    <div className='player'>
+      {isUser ? <p>SENİN SIRAN</p> : <p>BİLGİSAYARIN SIRASI</p>}
+    </div>
+  );
 };
 
 export default Player;

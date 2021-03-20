@@ -2,11 +2,89 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .error-text {
-  color: red;
+  color: #ee401d;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.wrong-answer {
+  color: #ee401d;
+}
+
+.start-screen {
+  width: 400px;
+  height: 200px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.player {
+  font-size: 24px;
+  color: #2cb34f;
+}
+
+.timer {
+  color: #2cb34f;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.name {
+  color: rgb(255, 94, 0);
+}
+
+.game-end-screen {
+  height: 100%;
+}
+
+button {
+  padding: 4px 30px;
+  background-color: #2cb34f;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-clip: content-box;
+  border: 1px solid #c5c6cd;
+  background-color: transparent;
+  border-radius: 50%;
+  margin: 0 5px 0 0;
+}
+
+input[type='radio']:checked {
+  padding: 3px;
+  background-color: #2cb34f;
+  outline: none;
+}
+
+.radio-box {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

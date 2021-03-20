@@ -10,7 +10,7 @@ const Timer = ({ isUser, setWinner, setGameEnd }) => {
         setSeconds(seconds - 1);
       }
       if (seconds === 0) {
-        finishGame(isUser, setWinner, setGameEnd);
+        finishGame(isUser, setWinner, setGameEnd, 'end-time');
         clearInterval(myInterval);
       }
     }, 1000);

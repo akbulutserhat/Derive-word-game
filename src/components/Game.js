@@ -79,7 +79,7 @@ const Game = ({ difficultyLevel }) => {
           <Name name={name}></Name>{' '}
         </>
       )}
-      {gameEnd && <EndScreen usedNames={usedNames}></EndScreen>}
+      {gameEnd && <EndScreen winner={winner} usedNames={usedNames}></EndScreen>}
     </div>
   );
 };

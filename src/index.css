@@ -4,8 +4,8 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
-  background-color: darkslateblue;
-  color: #fff;
+  background-color: #fff;
+  color: #111321;
 }
 
 #root {

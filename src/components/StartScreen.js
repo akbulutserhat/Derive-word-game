@@ -22,7 +22,7 @@ const StartScreen = ({ setStartGame, setDifficultyLevel }) => {
         <RadioBox text='Orta' value='3'></RadioBox>
         <RadioBox text='Zor' value='1'></RadioBox>
       </div>
-      <p>{errorMessage ? errorMessage : ''}</p>
+      <p className='error-text'>{errorMessage ? errorMessage : ''}</p>
       <button onClick={handleClickStart}>Başla</button>
     </div>
   );
