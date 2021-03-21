@@ -13,7 +13,10 @@ const EndScreen = ({ usedNames, winner }) => {
       <div className='used-names'>
         {usedNames.map((usedName, idx) =>
           idx != usedNames.length - 1 ? (
-            <pre key={idx}>{usedName}</pre>
+            <div className='used-name' key={idx}>
+              <pre>{usedName}</pre>
+              <i className='arrow-right'></i>
+            </div>
           ) : wrongAnswer ? (
             <pre key={idx} className='wrong-answer'>
               {wrongAnswer}

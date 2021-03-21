@@ -8,8 +8,6 @@ const App = () => {
   const [startGame, setStartGame] = useState(false);
   const [difficultyLevel, setDifficultyLevel] = useState(3);
 
-  console.log(difficultyLevel);
-
   return (
     <div className='main'>
       {!startGame && (
