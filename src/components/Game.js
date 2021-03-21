@@ -19,7 +19,8 @@ const Game = ({ difficultyLevel }) => {
   const [name, setName] = useState(getRandomName(names));
   const [winner, setWinner] = useState();
   const [gameEnd, setGameEnd] = useState(false);
-  // true = you, false = computer
+
+  // true = user, false = computer
   const [isUser, setIsUser] = useState(true);
   const [usedNames, setUsedNames] = useState([]);
 
@@ -44,7 +45,7 @@ const Game = ({ difficultyLevel }) => {
   useEffect(() => {
     if (isUser) {
       const recognition = getUserAnswer(names);
-      recognition.start();
+      recognition.start(); // mikrofona hiç ses gelmezse 5 saniye sonra kapanıyor.
       recognition.onresult = (event) => {
         let answer = event.results[0][0].transcript;
         answer = answer.toLowerCase();
