@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Derive Word Game
+
+This game is played against computer. The user say new words with the last letter of the words thanks to speech recognition mdn api and microphone. 
+The computer plays by the same rules too. The only difference is that the computer's answers are said with voice thanks to speech synthesis mdn api and speaker.
+
+The game is played to chrome browser for the best way.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
